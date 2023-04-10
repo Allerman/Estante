@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "estante.c"
+#include "livro.h"
+#include "create.h"
+#include "read.h"
+#include "update.h"
+#include "delete.h"
 
-typedef struct {
-    int id;
-    char name[50];
-    char autor[50] ;
-} Livro;
 
-int main() {
+int main(void) {
     int option;
     Livro l;
 
@@ -19,20 +18,21 @@ int main() {
         printf("3. Update\n");
         printf("4. Delete\n");
         printf("5. Exit\n");
+
         scanf("%d", &option);
 
         switch (option) {
             case 1:
-                create(&p);
+                create(&l);
                 break;
             case 2:
-                read(&p);
+                read(&l);
                 break;
             case 3:
-                update(&p);
+                update(&l);
                 break;
             case 4:
-                delete(&p);
+                delete(&l);
                 break;
             case 5:
                 printf("Exiting...\n");
@@ -44,3 +44,4 @@ int main() {
 
     return 0;
 }
+
