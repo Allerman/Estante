@@ -1,7 +1,9 @@
 void create(Livro *l) {
-    printf("Enter person ID: ");
+    printf("Enter book ID: ");
     scanf("%d", &l->id);
 
-    printf("Enter person name: ");
-    scanf("%s", l->name);
-}
+    printf("Enter book title: ");
+    fgets(l->title,50,stdin);
+    
+    }
+
