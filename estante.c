@@ -9,10 +9,10 @@
 
 int main(void) {
     int option;
-    Livro l;
+    Livro l[50];
 
-    do {
-        printf("Select an option:\n");
+    while (option != 5) {
+        printf("\nSelect an option:\n");
         printf("1. Create\n");
         printf("2. Read\n");
         printf("3. Update\n");
@@ -23,24 +23,25 @@ int main(void) {
 
         switch (option) {
             case 1:
-                create(&l);
+                create(&l[50]);
                 break;
             case 2:
-                read(&l);
+                read(&l[50]);
                 break;
             case 3:
-                update(&l);
+                update(&l[50]);
                 break;
             case 4:
-                delete(&l);
+                delete(&l[50]);
                 break;
             case 5:
                 printf("Exiting...\n");
                 break;
             default:
                 printf("Invalid option\n");
+                return 0;
         }
-    } while (option != 5);
+    }
 
     return 0;
 }
